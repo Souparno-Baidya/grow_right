@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Analysis System</title>
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Soil Analysis System</h1>
+            <p class="subtitle">Analyze your soil type and get recommendations</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            <section class="input-section">
+                <h2>Soil Analysis Input</h2>
+                <form id="soilForm">
+                    <div class="form-group">
+                        <label for="soilType">Current Soil Type:</label>
+                        <select id="soilType" required>
+                            <option value="">Select soil type</option>
+                            <option value="black">Black Soil</option>
+                            <option value="red">Red Soil</option>
+                            <option value="sandy">Sandy Soil</option>
+                            <option value="clay">Clay Soil</option>
+                            <option value="loamy">Loamy Soil</option>
+                            <option value="silt">Silt Soil</option>
+                        </select>
+                        <p class="error-message" id="soilTypeError">Please select a soil type</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="waterContent">Water Content (%):</label>
+                        <input type="number" id="waterContent" min="0" max="100" step="0.1" required>
+                        <p class="error-message" id="waterContentError">Please enter a valid water content (0-100%)</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pH">Soil pH:</label>
+                        <input type="number" id="pH" min="0" max="14" step="0.1" required>
+                        <p class="error-message" id="pHError">Please enter a valid pH value (0-14)</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="organicMatter">Organic Matter (%):</label>
+                        <input type="number" id="organicMatter" min="0" max="100" step="0.1" required>
+                        <p class="error-message" id="organicMatterError">Please enter a valid organic matter percentage (0-100%)</p>
+                    </div>
+                    
+                    <button type="submit" id="analyzeButton">Analyze Soil</button>
+                </form>
+                
+                <div class="loader" id="loader">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </section>
+            
+            <section class="result-section">
+                <h2>Analysis Results</h2>
+                <p id="initialMessage">Enter your soil details to get analysis results and recommendations.</p>
+                
+                <div class="result-card" id="resultCard">
+                    <h3>Soil Analysis Complete</h3>
+                    <div class="result-detail">
+                        <strong>Current Soil Type:</strong> <span id="resultSoilType"></span>
+                    </div>
+                    <div class="result-detail">
+                        <strong>Water Content:</strong> <span id="resultWaterContent"></span>%
+                    </div>
+                    <div class="result-detail">
+                        <strong>pH Level:</strong> <span id="resultPH"></span>
+                    </div>
+                    <div class="result-detail">
+                        <strong>Organic Matter:</strong> <span id="resultOrganicMatter"></span>%
+                    </div>
+                    
+                    <div class="soil-recom">
+                        <h4>Recommendation:</h4>
+                        <p id="resultRecommendation"></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <section class="history-section" id="historySection">
+            <h2>Previous Analysis History</h2>
+            <p id="noHistoryMessage">No analysis history available yet.</p>
+            <table id="historyTable" class="hidden">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Soil Type</th>
+                        <th>Water Content</th>
+                        <th>pH</th>
+                        <th>Organic Matter</th>
+                        <th>Recommendation</th>
+                    </tr>
+                </thead>
+                <tbody id="historyTableBody">
+                    <!-- History records will be inserted here -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Soil Analysis System &copy; 2025. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+</body>
+</html>

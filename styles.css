@@ -1,0 +1,213 @@
+/* CSS Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #36d67e;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.input-section, .result-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eaeaea;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+select, input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #219653;
+}
+
+.loader {
+    display: none;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.loader span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #27ae60;
+    border-radius: 50%;
+    margin: 0 5px;
+    animation: loader 1s infinite alternate;
+}
+
+.loader span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loader span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes loader {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+.result-card {
+    background-color: #f8f9fa;
+    border-left: 5px solid #27ae60;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: none;
+}
+
+.result-card h3 {
+    color: #27ae60;
+    margin-bottom: 15px;
+}
+
+.result-detail {
+    margin-bottom: 10px;
+}
+
+.result-detail strong {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.soil-recom {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #f5f3f3;
+    font-size: 0.9rem;
+}
+
+.history-section {
+    margin-top: 40px;
+    color: #011114;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.hidden {
+    display: none;
+}
+
+.error-message {
+    color: #e74c3c;
+    margin-top: 5px;
+    font-size: 14px;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .input-section, .result-section {
+        min-width: 100%;
+    }
+}
